@@ -1,3 +1,5 @@
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 #task 1:
 #create PAT:
 #create token:
@@ -5,7 +7,7 @@ install.packages("usethis")
 usethis::create_github_token()
 gitcreds::gitcreds_set()
 
-################################################################################
+#-------------------------------------------------------------------------------
 library(dplyr)
 library(ggplot2)
 library(lme4)
@@ -13,12 +15,13 @@ library(lme4)
 rm(list = ls())
 gc()
 
-library(readr)
+#-------------------------------------------------------------------------------
 #task 2:
+library(readr)
 #download from URL:
 url.dat = "https://raw.githubusercontent.com/kguidonimartins/betadiv-enp/main/data/community-geo-coordinates.csv"
 data1 =  read_csv(url(url.dat))
-
+#-------------------------------------------------------------------------------
 #task 3
 #install and use groundhog package:
 install.packages("groundhog")
@@ -26,7 +29,7 @@ library(groundhog)
 ip = as.data.frame(installed.packages()[,c(1)])
 pkgs <- ip[1]
 groundhog.library(pkgs, "2022-09-14")
-
+#-------------------------------------------------------------------------------
 #task 4
 #basic script:
 surv.dat = read.csv('C:/Users/Ryan/OneDrive/ABMI/caribou_anthropause/UBC/courses/LD1/UBC_LD1/dryad_field_survey_data.csv')
@@ -57,5 +60,5 @@ ggplot() +
   geom_boxplot(data = surv.dat, aes(x = method, y = hor_dist)) +
   facet_wrap(~genus)
 
-
+#-------------------------------------------------------------------------------
 #EOF
