@@ -23,12 +23,10 @@ library(readr)
 url.dat = "https://raw.githubusercontent.com/kguidonimartins/betadiv-enp/main/data/community-geo-coordinates.csv"
 data1 =  read_csv(url(url.dat))
 
-
 #task 2
 #basic script:
 surv.dat = read.csv('C:/Users/Ryan/OneDrive/ABMI/caribou_anthropause/UBC/courses/LD1/UBC_LD1/field_survey_data.csv')
 #dist.dat = read.csv('C:/Users/Ryan/OneDrive/ABMI/caribou_anthropause/UBC/courses/doi_10.5061_dryad.h0qg353__v2/distance_estimation_data.csv')
-
 
 #improve field names:
 surv.dat = surv.dat %>%
