@@ -57,6 +57,5 @@ ggplot() +
   geom_boxplot(data = surv.dat, aes(x = method, y = hor_dist)) +
   facet_wrap(~genus)
 
-###test
 
 #EOF
