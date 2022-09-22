@@ -1,0 +1,107 @@
+---
+title: Does detection distance vary by source? Comparing results from recorded bird song vs. natural bird song.
+author:
+  - name: Ryan Gill
+    email: rygill@gmail.com
+    affiliation: University of British Columbia
+    correspondingauthor: true
+    footnote: 1
+  - name: Chas McMurtry
+    email: 
+    affiliation: Another University
+address:
+  - code: Technology
+    address: Department, Street, City, State, Zip
+  - code: Another University
+    address: Department, Street, City, State, Zip
+abstract: |
+  Birds sing in different ways. Some birds are loud, others are quiet. Birds sound better in nature than in a recording.
+
+keywords: 
+  - ecology
+  - birds
+journal: "Ecological Letters"
+date: "`r Sys.Date()`"
+classoption: preprint, 3p, authoryear
+bibliography: mybibfile.bib
+linenumbers: true
+numbersections: true
+# Use a CSL with `citation_package = "default"`
+# csl: https://www.zotero.org/styles/elsevier-harvard
+output: 
+  rticles::elsevier_article:
+    keep_tex: true
+    citation_package: natbib
+header-includes:
+ \usepackage{float}
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H')
+```
+
+```{r setup, include=FALSE}
+
+
+library(dplyr)
+library(ggplot2)
+library(lme4)
+library(readr)
+library(prereg)
+
+```
+
+# Introduction
+
+*Birds are loud* [@"bchydro"2008]
+
+# Methods
+
+Some birds sang, others were in cages.
+
+# Results
+
+Figure \ref{fig1} is generated using an R chunk.
+
+```{r, include=FALSE}
+dir.create("../figures/")
+# create README.md file for directory
+## File > New File > Markdown File
+
+#basic script:
+surv.dat = readr::read_csv("https://datadryad.org/stash/downloads/file_stream/98806")
+#dist.dat = read.csv('C:/Users/Ryan/OneDrive/ABMI/caribou_anthropause/UBC/courses/doi_10.5061_dryad.h0qg353__v2/distance_estimation_data.csv')
+
+#improve field names:
+surv.dat = surv.dat %>%
+  dplyr::rename(hor_dist = Horizontal_distance,
+                species = Species,
+                plot = Plot,
+                obs = Observer,
+                evidence = Evidence,
+                obs_plot = Observer_plot,
+                n_indiv = Individuals)
+
+#make some factors:
+surv.dat$species = as.factor(surv.dat$species)
+surv.dat$plot = as.factor(surv.dat$plot)
+surv.dat$evidence = as.factor(surv.dat$evidence)
+surv.dat$obs = as.factor(surv.dat$obs)
+surv.dat$method = as.factor(surv.dat$method)
+
+#create a genus column:
+surv.dat$genus = stringr::word(surv.dat$species,1)
+
+#make a plot:
+fig1 = ggplot() +
+  geom_boxplot(data = surv.dat, aes(x = method, y = hor_dist)) +
+  facet_wrap(~genus)
+```
+
+
+
+# Discussion
+
+Birds birds birds[@2007for2008].
+
+# References {.unnumbered}

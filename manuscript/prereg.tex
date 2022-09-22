@@ -1,0 +1,122 @@
+\documentclass[preprint, 3p,
+authoryear]{elsarticle} %review=doublespace preprint=single 5p=2 column
+%%% Begin My package additions %%%%%%%%%%%%%%%%%%%
+
+\usepackage[hyphens]{url}
+
+  \journal{Ecological Letters} % Sets Journal name
+
+\usepackage{lineno} % add
+  \linenumbers % turns line numbering on
+
+\usepackage{graphicx}
+%%%%%%%%%%%%%%%% end my additions to header
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \usepackage{fontspec}
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={Does detection distance vary by source? Comparing results from recorded bird song vs.~natural bird song.},
+            colorlinks=false,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+
+\setcounter{secnumdepth}{5}
+% Pandoc toggle for numbering sections (defaults to be off)
+
+
+% tightlist command for lists without linebreak
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+\usepackage{float}
+
+
+
+\begin{document}
+
+
+\begin{frontmatter}
+
+  \title{Does detection distance vary by source? Comparing results from
+recorded bird song vs.~natural bird song.}
+    \author[University of British Columbia]{Ryan Gill%
+  \corref{cor1}%
+  \fnref{1}}
+   \ead{rygill@gmail.com} 
+    \author[Another University]{Chas McMurtry%
+  %
+  }
+  
+      \affiliation[Technology]{Department, Street, City, State, Zip}
+    \affiliation[Another University]{Department, Street, City, State,
+Zip}
+    \cortext[cor1]{Corresponding author}
+  
+  \begin{abstract}
+  Birds sing in different ways. Some birds are loud, others are quiet.
+  Birds sound better in nature than in a recording.
+  \end{abstract}
+    \begin{keyword}
+    ecology \sep 
+    birds
+  \end{keyword}
+  
+ \end{frontmatter}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\emph{Birds are loud} {[}@``bchydro''2008{]}
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+Some birds sang, others were in cages.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+Figure \ref{fig1} is generated using an R chunk.
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+Birds birds birds\citep{2007for2008}.
+
+\renewcommand\refname{References}
+\bibliography{mybibfile.bib}
+
+
+\end{document}

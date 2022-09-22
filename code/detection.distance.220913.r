@@ -18,21 +18,22 @@ gc()
 #-------------------------------------------------------------------------------
 #task 2:
 library(readr)
-#download from URL:
-url.dat = "https://raw.githubusercontent.com/kguidonimartins/betadiv-enp/main/data/community-geo-coordinates.csv"
-data1 =  read_csv(url(url.dat))
 #-------------------------------------------------------------------------------
 #task 3
 #install and use groundhog package:
-install.packages("groundhog")
-library(groundhog)
-ip = as.data.frame(installed.packages()[,c(1)])
-pkgs <- ip[1]
-groundhog.library(pkgs, "2022-09-14")
+#install.packages("groundhog")
+#library(groundhog)
+#ip = as.data.frame(installed.packages()[,c(1)])
+#pkgs <- ip[1]
+#groundhog.library(pkgs, "2022-09-14")
+#-------------------------------------------------------------------------------
+library(prereg)
+#copy paste from wiki to this document, create pdf
+#save prereg to 
 #-------------------------------------------------------------------------------
 #task 4
 #basic script:
-surv.dat = read.csv('C:/Users/Ryan/OneDrive/ABMI/caribou_anthropause/UBC/courses/LD1/UBC_LD1/dryad_field_survey_data.csv')
+surv.dat = readr::read_csv("https://datadryad.org/stash/downloads/file_stream/98806")
 #dist.dat = read.csv('C:/Users/Ryan/OneDrive/ABMI/caribou_anthropause/UBC/courses/doi_10.5061_dryad.h0qg353__v2/distance_estimation_data.csv')
 
 #improve field names:
@@ -59,6 +60,14 @@ surv.dat$genus = stringr::word(surv.dat$species,1)
 ggplot() +
   geom_boxplot(data = surv.dat, aes(x = method, y = hor_dist)) +
   facet_wrap(~genus)
+
+#Git steps:
+#1: pull from Git
+#2: make changes to files
+#3: commit changes
+#4: push to Git
+
+
 
 #-------------------------------------------------------------------------------
 #EOF
