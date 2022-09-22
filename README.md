@@ -3,3 +3,5 @@
 repo for LD course September 2022
 
 LD1 repo for bird detection analysis.
+
+This project is being reviewed by Rory Macklin
