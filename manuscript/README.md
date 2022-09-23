@@ -1,1 +1,1 @@
-folder holding my Rmd and associated files.
+Folder holding my Rmd and associated files.
