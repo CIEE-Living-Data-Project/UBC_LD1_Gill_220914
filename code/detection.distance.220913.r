@@ -67,11 +67,7 @@ ggplot() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~method)
 
-#facet by method
-ggplot() +
-  geom_boxplot(data = surv.dat, aes(x = genus, y = hor_dist)) +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  facet_wrap(~method)
+
 
 #Git steps:
 #1: pull from Git
