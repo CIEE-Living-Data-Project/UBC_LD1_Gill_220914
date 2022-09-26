@@ -68,7 +68,6 @@ ggplot() +
   facet_wrap(~method)
 
 
-
 #Git steps:
 #1: pull from Git
 #2: make changes to files
