@@ -3,9 +3,9 @@
 #task 1:
 #create PAT:
 #create token:
-install.packages("usethis")
-usethis::create_github_token()
-gitcreds::gitcreds_set()
+#install.packages("usethis")
+#usethis::create_github_token()
+#gitcreds::gitcreds_set()
 
 #-------------------------------------------------------------------------------
 library(dplyr)
@@ -54,7 +54,7 @@ surv.dat$obs = as.factor(surv.dat$obs)
 surv.dat$method = as.factor(surv.dat$method)
 
 #create a genus column:
-surv.dat$genus = stringr::word(surv.dat$species,1)
+surv.dat$genus = as.factor(stringr::word(surv.dat$species,1))
 
 #make a plot:
 ggplot() +
@@ -66,6 +66,7 @@ ggplot() +
   geom_boxplot(data = surv.dat, aes(x = genus, y = hor_dist)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~method)
+
 
 #Git steps:
 #1: pull from Git
