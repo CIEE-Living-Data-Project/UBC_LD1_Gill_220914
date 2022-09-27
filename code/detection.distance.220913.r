@@ -56,6 +56,9 @@ surv.dat$method = as.factor(surv.dat$method)
 #create a genus column:
 surv.dat$genus = as.factor(stringr::word(surv.dat$species,1))
 
+#save formatted data:
+write.csv(surv.dat, 'C:/Users/Ryan/OneDrive/ABMI/caribou_anthropause/UBC/courses/LD1/UBC_LD1/data/220927_field_dat_formatted.csv')
+
 #make a plot:
 ggplot() +
   geom_boxplot(data = surv.dat, aes(x = method, y = hor_dist)) +
@@ -67,7 +70,7 @@ ggplot() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   facet_wrap(~method)
 
-
+#facet by 
 
 #Git steps:
 #1: pull from Git
