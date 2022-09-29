@@ -1,2 +1,5 @@
 Sub-directories for code:
-plots: uses formatted data created in detection.distance.fjfjsd to make a couple of very simple facetted plots.
+
+detection.distance.220913.r - downloads data from the Dryad URL, reformats it, adds a column and saves it to the data directory.
+
+plots.r - uses formatted data created in detection.distance.220913.r to make a couple of very simple facetted plots.
